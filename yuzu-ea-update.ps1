@@ -14,8 +14,6 @@ Remove-Item "$PWD\*" -Exclude @($filename, $MyInvocation.MyCommand.Name) -Recurs
 
 Expand-Archive -Path $filename -DestinationPath $PWD -Force
 
-Remove-Item 'yuzu-windows-msvc-early-access\*.tar.xz'
-
 Move-Item -Path 'yuzu-windows-msvc-early-access\*' -Destination $PWD
 
-Remove-Item "$PWD\*" -Include @($filename, 'yuzu-windows-msvc-early-access')
+Remove-Item "$PWD\*" -Include @($filename, '*.tar.xz', 'yuzu-windows-msvc-early-access')
