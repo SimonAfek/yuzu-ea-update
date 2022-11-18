@@ -8,7 +8,7 @@ $windowsZipLink = (($releaseAssetsPage.Links | Select -ExpandProperty href) -lik
 
 $filename = 'yuzu.zip'
 
-Invoke-RestMethod -Uri "https://github.com/$windowsZipLink" -Method Get -Headers $headers -OutFile $filename
+Invoke-RestMethod -Uri "https://github.com/$windowsZipLink" -Method Get -OutFile $filename
 
 Remove-Item "$PWD\*" -Exclude @($filename, $MyInvocation.MyCommand.Name) -Recurse
 
