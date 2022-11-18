@@ -1,3 +1,5 @@
+$ProgressPreference = 'SilentlyContinue'
+
 $releasePage = Invoke-WebRequest -Uri 'https://github.com/pineappleEA/pineapple-src/releases/latest' -Method Get
 
 $releaseTag = $releasePage.BaseResponse.ResponseUri.AbsoluteUri.Split('/')[-1]
